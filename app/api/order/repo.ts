@@ -34,7 +34,20 @@ export const readOrderByStoreId = async (storeId: number) => {
         storeId,
       },
       include: {
-        items: true,
+        store: {
+          select: {
+            name: true,
+          },
+        },
+        items: {
+          include: {
+            product: {
+              select: {
+                name: true,
+              },
+            },
+          },
+        },
       },
     });
   } catch (err) {

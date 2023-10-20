@@ -50,7 +50,9 @@ const Page = ({ params }: { params: { id: number } }) => {
 
   return (
     <Box width={600} component="form" onSubmit={handleSubmit(onSubmit)}>
-      <Button type="submit">訂購</Button>
+      <Button variant="outlined" type="submit">
+        訂購
+      </Button>
       <TableContainer>
         <Table>
           <TableHead>
